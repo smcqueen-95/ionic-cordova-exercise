@@ -1,4 +1,4 @@
-# Ionic 3 and cordova project
+# Ionic 3 and Cordova Project
 
 This project is a part of the Coursera course **Multiplatform Mobile App Development with Web Technologies: [Ionic and Cordova]**
 
