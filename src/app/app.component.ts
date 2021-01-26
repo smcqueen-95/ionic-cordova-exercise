@@ -1,38 +1,41 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { Component, ViewChild } from "@angular/core";
+import { Nav, Platform, ModalController } from "ionic-angular";
+import { StatusBar } from "@ionic-native/status-bar";
+import { SplashScreen } from "@ionic-native/splash-screen";
 
-import { HomePage } from '../pages/home/home';
-import { AboutPage } from '../pages/about/about';
-import { MenuPage } from '../pages/menu/menu';
-import { ContactPage } from '../pages/contact/contact';
-import {FavoritesPage} from '../pages/favorites/favorites';
+import { HomePage } from "../pages/home/home";
+import { AboutPage } from "../pages/about/about";
+import { MenuPage } from "../pages/menu/menu";
+import { ContactPage } from "../pages/contact/contact";
+import { FavoritesPage } from "../pages/favorites/favorites";
+import { ReservationPage } from "../pages/reservation/reservation";
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: "app.html",
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, icon: string, component: any}>;
+  pages: Array<{ title: string; icon: string; component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public modalCtrl: ModalController
+  ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-    
-      { title: 'Home', icon: 'home', component: HomePage },
-      { title: 'About Us', icon: 'information-circle', component: AboutPage },
-      { title: 'Menu', icon: 'list-box', component: MenuPage },
-      { title: 'My Favorites', icon: 'heart', component: FavoritesPage },
-      { title: 'Contact Us', icon: 'contact', component: ContactPage },
-      
-];
-
+      { title: "Home", icon: "home", component: HomePage },
+      { title: "About Us", icon: "information-circle", component: AboutPage },
+      { title: "Menu", icon: "list-box", component: MenuPage },
+      { title: "My Favorites", icon: "heart", component: FavoritesPage },
+      { title: "Contact Us", icon: "contact", component: ContactPage },
+    ];
   }
 
   initializeApp() {
@@ -48,5 +51,11 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  openReserve() {
+
+    let modal = this.modalCtrl.create(ReservationPage);
+    modal.present();
   }
 }
