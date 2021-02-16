@@ -16,22 +16,37 @@
 
 <ion-content padding>
   <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
-    <ion-item> 
-      <ion-label position="floating">Your name</ion-label>
+    <ion-item>
+      <ion-label floating>Your name</ion-label>
       <ion-input formControlName="author" type="text"></ion-input>
     </ion-item>
-    <ion-item> 
-      <ion-label position="stacked">Your Rating</ion-label> 
-      <ion-range formControlName="rating" min="0" max="5" step="1" pin="true" snaps="true" ticks="true">
+    <ion-item>
+      <ion-label floating>Your Rating</ion-label>
+      <ion-range
+        formControlName="rating"
+        min="0"
+        max="5"
+        step="1"
+        pin="true"
+        snaps="true"
+        ticks="true"
+      >
         <ion-icon slot="start" name="sad-outline"></ion-icon>
         <ion-icon slot="end" name="happy-outline"></ion-icon>
       </ion-range>
-      
     </ion-item>
-    <ion-item> 
-      <ion-label position="floating">Your Comment</ion-label>
+    <ion-item>
+      <ion-label floating>Your Comment</ion-label>
       <ion-textarea formControlName="comment" rows="8"></ion-textarea>
     </ion-item>
-    <button ion-button expand="block" type="submit" color="primary" [disabled]="!commentForm.valid">Submit</button>
+    <button
+      ion-button
+      expand="block"
+      type="submit"
+      color="primary"
+      [disabled]="!commentForm.valid"
+    >
+      Submit
+    </button>
   </form>
 </ion-content>
