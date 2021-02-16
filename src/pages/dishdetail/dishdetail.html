@@ -6,13 +6,9 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-    <div class="actionbutton">
-      <ion-buttons slot="end">
-        <button ion-button icon-only clear (click)="openActionSheet()">
-          <ion-icon name="ellipsis-vertical"></ion-icon>
-        </button>
-      </ion-buttons>
-    </div>
+    <button class="actionbutton" ion-button (click)="openActionSheet()">
+      <ion-icon name="arrow-down-outline"></ion-icon>
+    </button>
     <ion-title>Dish Detail</ion-title>
   </ion-navbar>
 </ion-header>
