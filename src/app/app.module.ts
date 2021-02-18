@@ -14,10 +14,17 @@ import { FavoritesPage } from "../pages/favorites/favorites";
 import { ReservationPage } from "../pages/reservation/reservation";
 import { CommentsPage } from "../pages/comments/comments";
 import { LoginPage } from "../pages/login/login";
+import { RegisterPage } from '../pages/register/register';
 
 import { baseURL } from "../shared/baseurl";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
+import { Camera } from '@ionic-native/camera/ngx';
+import { CallNumber } from '@ionic-native/call-number/ngx';
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { Network } from '@ionic-native/network/ngx';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { DishProvider } from "../providers/dish/dish";
 import { LeaderProvider } from "../providers/leader/leader";
 import { PromotionProvider } from "../providers/promotion/promotion";
@@ -36,6 +43,7 @@ import { FavoriteProvider } from "../providers/favorite/favorite";
     ReservationPage,
     CommentsPage,
     LoginPage,
+    RegisterPage,
   ],
   imports: [
     BrowserModule,
@@ -55,17 +63,25 @@ import { FavoriteProvider } from "../providers/favorite/favorite";
     ReservationPage,
     CommentsPage,
     LoginPage,
+    RegisterPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    LocalNotifications,
+    Camera,
+    EmailComposer,
+    SocialSharing,
+    CallNumber,
+    Network,
     DishProvider,
     LeaderProvider,
     PromotionProvider,
     ProcessHttpmsgProvider,
     { provide: "BaseURL", useValue: baseURL },
     FavoriteProvider,
+    
   ],
 })
 export class AppModule {}
