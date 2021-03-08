@@ -12,7 +12,7 @@ Software Developer and aspiring Game Developer
 
  (Certification not yet given)
 # Project 
-![Video](./src/assets/images/angular.gif)
+![Video](src/assets/ionic-conFusion.gif)
 
 ## Experience with Project
 - This is my third course in the Specialization and it was based around Ionic Angular and Cordova. 
